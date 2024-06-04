@@ -14,6 +14,6 @@ int main() {
     c = sqrt(pow(a, 2) + pow(b, 2));
     
     std::cout << "El valor de c es " << c;
-    
+
     return 0;
 }
