@@ -8,8 +8,8 @@ int main() {
 
     int temp;
 
-    for (int i = 0; i < sizeof(array)/sizeof(array[0]) - 1; i++) {
-        for (int j = 0; j < sizeof(array)/sizeof(array[0]) - i - 1 ; j++) {
+    for (int i = 0; i < sizeof(array) / sizeof(array[0]) - 1; i++) {
+        for (int j = 0; j < sizeof(array) / sizeof(array[0]) - i - 1 ; j++) {
             if (array[j] > array[j + 1]) {
                 temp = array[j];
                 array[j] = array[j + 1];
