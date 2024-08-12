@@ -65,7 +65,7 @@ bool checkWinner(char *spaces, char computer, char player) {
     if ((spaces[0] != '-') &&
         (spaces[0] == spaces[1]) &&
         (spaces[1] == spaces[2])) {
-            std::cout << spaces[0] << " WINS!'\n";
+            std::cout << spaces[0] << " WINS!\n";
             
             return true;
         }
@@ -73,7 +73,7 @@ bool checkWinner(char *spaces, char computer, char player) {
     if ((spaces[3] != '-') &&
         (spaces[3] == spaces[4]) &&
         (spaces[4] == spaces[5])) {
-            std::cout << spaces[3] << " WINS!'\n";
+            std::cout << spaces[3] << " WINS!\n";
         
             return true;
         }
@@ -81,7 +81,7 @@ bool checkWinner(char *spaces, char computer, char player) {
     if ((spaces[6] != '-') &&
         (spaces[6] == spaces[7]) &&
         (spaces[7] == spaces[8])) {
-            std::cout << spaces[6] << " WINS!'\n";
+            std::cout << spaces[6] << " WINS!\n";
         
             return true;
         }
@@ -89,7 +89,7 @@ bool checkWinner(char *spaces, char computer, char player) {
     if ((spaces[0] != '-') &&
         (spaces[0] == spaces[3]) &&
         (spaces[3] == spaces[6])) {
-            std::cout << spaces[0] << " WINS!'\n";
+            std::cout << spaces[0] << " WINS!\n";
         
             return true;
         }
@@ -97,7 +97,7 @@ bool checkWinner(char *spaces, char computer, char player) {
     if ((spaces[1] != '-') &&
         (spaces[1] == spaces[4]) &&
         (spaces[4] == spaces[7])) {
-            std::cout << spaces[1] << " WINS!'\n";
+            std::cout << spaces[1] << " WINS!\n";
 
             return true;
         }
@@ -105,7 +105,7 @@ bool checkWinner(char *spaces, char computer, char player) {
     if ((spaces[2] != '-') &&
         (spaces[2] == spaces[5]) &&
         (spaces[5] == spaces[8])) {
-            std::cout << spaces[2] << " WINS!'\n";
+            std::cout << spaces[2] << " WINS!\n";
         
             return true;
         }
@@ -113,7 +113,7 @@ bool checkWinner(char *spaces, char computer, char player) {
     if ((spaces[0] != '-') &&
         (spaces[0] == spaces[4]) &&
         (spaces[4] == spaces[8])) {
-            std::cout << spaces[0] << " WINS!'\n";
+            std::cout << spaces[0] << " WINS!\n";
 
             return true;
         }
@@ -121,7 +121,7 @@ bool checkWinner(char *spaces, char computer, char player) {
     if ((spaces[2] != '-') &&
         (spaces[2] == spaces[4]) &&
         (spaces[4] == spaces[6])) {
-            std::cout << spaces[2] << " WINS!'\n";
+            std::cout << spaces[2] << " WINS!\n";
 
             return true;
         }
