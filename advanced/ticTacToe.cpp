@@ -61,14 +61,122 @@ void computerMove(char *spaces, char computer) {
     drawBoard(spaces);
 }
 
+bool checkWinner(char *spaces, char computer, char player) {
+    if ((spaces[0] != '-') &&
+        (spaces[0] == spaces[1]) &&
+        (spaces[1] == spaces[2])) {
+            std::cout << spaces[0] << " WINS!'\n";
+            
+            return true;
+        }
+
+    if ((spaces[3] != '-') &&
+        (spaces[3] == spaces[4]) &&
+        (spaces[4] == spaces[5])) {
+            std::cout << spaces[3] << " WINS!'\n";
+        
+            return true;
+        }
+
+    if ((spaces[6] != '-') &&
+        (spaces[6] == spaces[7]) &&
+        (spaces[7] == spaces[8])) {
+            std::cout << spaces[6] << " WINS!'\n";
+        
+            return true;
+        }
+
+    if ((spaces[0] != '-') &&
+        (spaces[0] == spaces[3]) &&
+        (spaces[3] == spaces[6])) {
+            std::cout << spaces[0] << " WINS!'\n";
+        
+            return true;
+        }
+
+    if ((spaces[1] != '-') &&
+        (spaces[1] == spaces[4]) &&
+        (spaces[4] == spaces[7])) {
+            std::cout << spaces[1] << " WINS!'\n";
+
+            return true;
+        }
+
+    if ((spaces[2] != '-') &&
+        (spaces[2] == spaces[5]) &&
+        (spaces[5] == spaces[8])) {
+            std::cout << spaces[2] << " WINS!'\n";
+        
+            return true;
+        }
+
+    if ((spaces[0] != '-') &&
+        (spaces[0] == spaces[4]) &&
+        (spaces[4] == spaces[8])) {
+            std::cout << spaces[0] << " WINS!'\n";
+
+            return true;
+        }
+
+    if ((spaces[2] != '-') &&
+        (spaces[2] == spaces[4]) &&
+        (spaces[4] == spaces[6])) {
+            std::cout << spaces[2] << " WINS!'\n";
+
+            return true;
+        }
+
+    return false;
+}
+
+bool checkTie(char *spaces) {
+    for (int i = 0; i < 9; i++) {
+        if (spaces[i] == '-') {
+            
+            return false;
+        }
+    }
+    std::cout << "It's a tie!\n";
+
+    return true;
+}
+
 int main() {
     char player = 'X';
     char computer = '0';
-    char spaces[] = {'X', 'X', 'X', 'X', 'X', 'X', '-',  'X', '-'};
+    char spaces[] = {'-', '-', '-', '-', '-', '-', '-',  '-', '-'};
+    bool running = true;
+
     
     printInitMessage();
-    playerMove(spaces, player);
-    computerMove(spaces, computer);
+
+    while (running) {
+        playerMove(spaces, player);
+        
+        if (checkWinner(spaces, computer, player)) {
+            running = false;
+
+            break;
+        } else if (checkTie(spaces)) {
+            running = false;
+
+            break;
+        }
+
+        computerMove(spaces, computer);
+        
+        if (checkWinner(spaces, computer, player)) {
+            running = false;
+
+            break;
+        } else if (checkTie(spaces)) {
+            running = false;
+
+            break;
+        }
+
+
+    }
     
     return 0;
 }
